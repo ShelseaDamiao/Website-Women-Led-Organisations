@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="pt-MZ">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comunidados — Registo Nacional das Organizações da Sociedade Civil</title>
+  <meta name="description" content="Registo nacional e diretório pesquisável das organizações da sociedade civil de Moçambique.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B2259'/%3E%3Cpath d='M4 26 L11 10 L18 26Z' fill='%233A6FE0'/%3E%3Cpath d='M14 26 L21 10 L28 26Z' fill='%23E6EEFC'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#inicio" class="brand" aria-label="Comunidados, página inicial">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <strong>Comunidados</strong>
+          <small>Registo Nacional de OSC</small>
+        </span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-principal">Menu</button>
+      <nav id="nav-principal" class="site-nav" aria-label="Principal">
+        <a href="#inicio" data-route="inicio">Início</a>
+        <a href="#diretorio" data-route="diretorio">Pesquisar</a>
+        <a href="#registar" data-route="registar">Registar organização</a>
+        <a href="#sobre" data-route="sobre">Sobre</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+
+    <!-- ============ INÍCIO ============ -->
+    <section data-view="inicio">
+      <div class="hero">
+        <div class="wrap hero-inner">
+          <h1>O registo nacional das organizações da sociedade civil de Moçambique</h1>
+          <p class="lead">Encontre organizações por nome, província ou área de trabalho, ou registe a sua. O registo é gratuito, não pede documentos e fica visível de imediato.</p>
+
+          <form class="hero-search" role="search" id="pesquisa-inicio">
+            <label for="q-inicio">Pesquisar organizações</label>
+            <div class="hero-search-row">
+              <input id="q-inicio" type="search" placeholder="Nome, sigla, distrito ou área, por exemplo “educação Nampula”">
+              <button type="submit" class="primary">Pesquisar</button>
+            </div>
+          </form>
+
+          <p class="hero-cta">
+            <a class="button button-light" href="#registar">Registar a minha organização</a>
+          </p>
+
+          <p class="hero-stats" data-stats hidden>
+            <span><strong data-stat="total">—</strong> organizações registadas</span>
+            <span><strong data-stat="mulheres">—</strong> lideradas por mulheres</span>
+            <span><strong data-stat="jovens">—</strong> lideradas por jovens</span>
+            <span><strong data-stat="provincias">—</strong> de 11 províncias</span>
+          </p>
+        </div>
+        <div class="band" aria-hidden="true"></div>
+      </div>
+
+      <div class="wrap section">
+        <h2>Como funciona o registo</h2>
+        <ol class="steps">
+          <li>
+            <h3>Preencha um único formulário</h3>
+            <p>Nome, tipo de organização, sede, contactos para o público e áreas de actuação. Não precisa de documentos.</p>
+          </li>
+          <li>
+            <h3>Classifique a organização</h3>
+            <p>Indique se é liderada por mulheres, por jovens, de base comunitária ou outra classificação que se aplique.</p>
+          </li>
+          <li>
+            <h3>Apareça no diretório</h3>
+            <p>O registo é publicado de imediato, com os contactos que escolheu tornar públicos, e recebe uma referência única.</p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="section section-tint">
+        <div class="wrap split">
+          <div>
+            <h2>Cada organização escolhe como se classifica</h2>
+            <p>Durante o registo, a organização marca as classificações que se aplicam. No diretório, qualquer pessoa pode filtrar por elas.</p>
+            <ul class="class-list" data-classificacoes></ul>
+            <a class="button" href="#registar">Registar a minha organização</a>
+          </div>
+          <div class="checklist">
+            <h3>Tenha à mão antes de começar</h3>
+            <ul>
+              <li>Nome completo, sigla e tipo de organização</li>
+              <li>Telefone e email que podem ser públicos</li>
+              <li>Nome e contacto da pessoa responsável</li>
+              <li>Províncias e áreas onde a organização trabalha</li>
+              <li>Uma frase curta sobre a missão da organização</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REGISTO ============ -->
+    <section data-view="registar" hidden>
+      <div class="page-head">
+        <div class="wrap">
+          <h1>Registar uma organização</h1>
+          <p>Um único formulário para todas as organizações. Campos marcados com <span class="req">*</span> são obrigatórios.</p>
+        </div>
+        <div class="band" aria-hidden="true"></div>
+      </div>
+      <div class="wrap" id="formulario-registo"></div>
+    </section>
+
+    <!-- ============ DIRETÓRIO ============ -->
+    <section data-view="diretorio" hidden>
+      <div class="page-head">
+        <div class="wrap">
+          <h1>Diretório de organizações</h1>
+          <p>Todas as organizações registadas na Comunidados, com os contactos que cada uma tornou públicos.</p>
+        </div>
+        <div class="band" aria-hidden="true"></div>
+      </div>
+      <div class="wrap section">
+        <div class="filters" role="search">
+          <div class="field filter-search">
+            <label for="f-pesquisa">Pesquisar</label>
+            <input id="f-pesquisa" type="search" placeholder="Nome, sigla, distrito, área ou palavra da missão">
+          </div>
+          <div class="field">
+            <label for="f-provincia">Província</label>
+            <select id="f-provincia"><option value="">Todas</option></select>
+          </div>
+          <div class="field">
+            <label for="f-tipo">Tipo de organização</label>
+            <select id="f-tipo"><option value="">Todos</option></select>
+          </div>
+          <div class="field">
+            <label for="f-classificacao">Classificação</label>
+            <select id="f-classificacao"><option value="">Todas</option></select>
+          </div>
+          <div class="field">
+            <label for="f-area">Área de actuação</label>
+            <select id="f-area"><option value="">Todas</option></select>
+          </div>
+        </div>
+        <div class="dir-bar">
+          <p class="dir-status" id="dir-status" role="status"></p>
+          <button type="button" class="link-button" id="limpar-filtros" hidden>Limpar filtros</button>
+        </div>
+        <div id="dir-lista" class="dir-list"></div>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE ============ -->
+    <section data-view="sobre" hidden>
+      <div class="page-head">
+        <div class="wrap">
+          <h1>Sobre a Comunidados</h1>
+        </div>
+        <div class="band" aria-hidden="true"></div>
+      </div>
+      <div class="wrap section prose">
+        <p>A Comunidados reúne num só lugar a informação sobre as organizações da sociedade civil que trabalham em Moçambique: quem são, onde estão, em que áreas actuam e como contactá-las.</p>
+
+        <h2>Para que serve o registo</h2>
+        <p>Facilita a colaboração entre organizações, ajuda parceiros e financiadores a encontrar quem já trabalha em cada província e área, e produz dados que mostram onde a sociedade civil está presente e onde falta apoio.</p>
+
+        <h2>Classificação das organizações</h2>
+        <p>Todas as organizações usam o mesmo formulário e escolhem as classificações que se aplicam. Consideramos uma organização liderada por mulheres quando uma mulher ocupa o cargo mais alto e as mulheres são pelo menos metade da direcção, e liderada por jovens quando quem a dirige tem até 35 anos.</p>
+
+        <h2>Como tratamos os dados</h2>
+        <p>O registo não pede documentos e é publicado de imediato. No diretório aparecem o nome, o tipo, a classificação, a localização, as áreas de actuação, a missão e os contactos para o público indicados pela organização. Os dados da pessoa responsável ficam reservados à equipa da Comunidados.</p>
+        <p>Para corrigir ou retirar os dados de uma organização, escreva para <a data-email href="#">o nosso email</a> indicando a referência do registo.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="band" aria-hidden="true"></div>
+    <div class="wrap footer-inner">
+      <p><strong>Comunidados</strong>, Registo Nacional das Organizações da Sociedade Civil</p>
+      <p>Contacto: <a data-email href="#">—</a></p>
+      <p>© <span data-ano></span> Comunidados</p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/dados.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
